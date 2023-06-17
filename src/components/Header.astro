@@ -1,0 +1,103 @@
+<header>
+  <div class="container">
+    <div class="header-image">
+      <picture>
+        <source 
+          sizes="1920w"
+          srcset="/img/header.avif 1920w"
+          type="image/avif"
+        >
+        <source 
+          sizes="1920w"
+          srcset="/img/header.webp 1920w"
+          type="image/webp"
+        >
+        <source 
+          sizes="1920w"
+          srcset="/img/header.png 1920w"
+          type="image/png"
+        >
+        <img 
+          loading="lazy"  decoding="async" src="/img/header.png" alt="ClearTone HeadPhones"
+          width="1000" height="500"
+        >
+      </picture>
+    </div>
+
+    <div class="header-text">
+      <p class="tagline-product">Professional Sound</p>
+      <h1 class="text-gradient-1">ClearTone</h1>
+      <p class="product-description">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex hic deserunt vel accusamus necessitatibus suscipit reprehenderit facere neque, amet, laudantium, quibusdam inventore ea maiores. Autem molestiae reiciendis cum quia ex?
+      </p>
+      <p class="product-price">
+        From <span>$299</span>
+      </p>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    padding: calc(var(--gap) * 3) 0;
+
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  header img {
+    width: 100%;
+    height: auto;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+
+    padding-top: var(--gap);
+
+    text-align: center;
+  }
+
+  .tagline-product {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  
+  h1 {
+    margin: 0;
+
+    font-size: 6rem;
+  }
+
+  .product-description {
+    line-height: 1.5;
+  }
+
+  .product-price span {
+    font-size: 6rem;
+    font-weight: 900;
+  }
+
+  @media screen and (width >= 768px) {
+    header .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    .header-text {
+      row-gap: 3rem;
+
+      padding: 0;
+
+      text-align: start;
+    }
+
+    h1 {
+      font-size: 10rem;
+      line-height: 1;
+    }
+  }
+</style>

@@ -13,24 +13,91 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
+	@import url("/normalize.css");
+	
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--mainFont: 'Roboto', sans-serif;
+		--secondFont: 'Lato', sans-serif;
+
+		--gap: 5rem;
+
+		--primary: #1073BA;
+		--secondary: #00DA55;
+		--gray: #3B3B3B;
+		--white: #FFFFFF;
+		--black: #1F1E1E;
+		--lightGray: #E1E1E1;
 	}
+
+	*, *::after, *::before {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		font-size: 62.5%;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+
+	body {
+		font-family: var(--mainFont);
+		font-size: 1.6rem;
+	}
+
+	/* Global styles */
+	.container {
+		width: 90%;
+		max-width: 120rem;
+
+		margin: 0 auto;
+	}
+
+	h1, h2, h3 {
+		margin: calc(var(--gap) / 2), 0;
+
+		font-weight: 900;
+		font-family: var(--mainFont);
+	}
+
+	h1 {
+		font-size: 4.4rem;
+	}
+
+	h2 {
+		font-size: 3.6rem;
+	}
+
+	h3 {
+		font-size: 2.8rem;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+
+		display: block;
+	}
+
+	/* Utilities */
+	.text-center {
+		text-align: center;
+	}
+
+	.text-gradient-1 {
+		color: transparent;
+		background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
 	}
 </style>
